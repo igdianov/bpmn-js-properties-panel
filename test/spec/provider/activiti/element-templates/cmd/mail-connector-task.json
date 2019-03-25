@@ -1,0 +1,38 @@
+{
+  "label": "mailtask",
+  "id": "my.mail.Task",
+  "appliesTo": [
+    "bpmn:ServiceTask"
+  ],
+  "connector": "com.my.connector.MailConnector",
+  "properties": [
+    {
+      "label": "Recipient",
+      "type": "String",
+      "binding": {
+        "type": "activiti:connectorInputParameter",
+        "name": "recipient"
+      }
+    },
+    {
+      "label": "Template",
+      "type": "Text",
+      "description": "By the way, you can use freemarker templates ${...} here",
+      "value": "Hello ${firstName}!",
+      "binding": {
+        "type": "activiti:connectorInputParameter",
+        "name": "messageBody",
+        "scriptFormat": "freemarker"
+      }
+    },
+    {
+      "label": "AWESOME",
+      "type": "Boolean",
+      "value": true,
+      "binding": {
+        "type": "property",
+        "name": "activiti:async"
+      }
+    }
+  ]
+},

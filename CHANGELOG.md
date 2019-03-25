@@ -17,11 +17,11 @@ ___Note:__ Yet to be released changes appear here._
 
 ## 0.28.1
 
-* `FIX`: handle correct `camunda:isStartableInTasklist` default value
+* `FIX`: handle correct `activiti:isStartableInTasklist` default value
 
 ## 0.28.0
 
-* `FEAT`: support `camunda:isStartableInTasklist` ([#284](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/284))
+* `FEAT`: support `activiti:isStartableInTasklist` ([#284](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/284))
 * `FIX`: don't restrict properties panel height unnecessarily ([#283](https://github.com/bpmn-io/bpmn-js-properties-panel/pull/283))
 
 ## 0.27.0

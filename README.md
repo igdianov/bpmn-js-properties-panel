@@ -66,17 +66,17 @@ propertiesPanel.attachTo('#other-properties');
 
 ### Use with Camunda properties
 
-In order to be able to edit [Camunda](https://camunda.com) related properties, use the [camunda properties provider](https://github.com/bpmn-io/bpmn-js-properties-panel/tree/master/lib/provider/camunda).
+In order to be able to edit [Camunda](https://camunda.com) related properties, use the [camunda properties provider](https://github.com/bpmn-io/bpmn-js-properties-panel/tree/master/lib/provider/activiti).
 In addition, you need to define the `camunda` namespace via [camunda-bpmn-moddle](https://github.com/camunda/camunda-bpmn-moddle).
 
 ```javascript
 var BpmnJS = require('bpmn-js/lib/Modeler'),
     propertiesPanelModule = require('bpmn-js-properties-panel'),
     // use Camunda properties provider
-    propertiesProviderModule = require('bpmn-js-properties-panel/lib/provider/camunda');
+    propertiesProviderModule = require('bpmn-js-properties-panel/lib/provider/activiti');
 
 // a descriptor that defines Camunda related BPMN 2.0 XML extensions
-var camundaModdleDescriptor = require('camunda-bpmn-moddle/resources/camunda');
+var activitiModdleDescriptor = require('activiti-bpmn-moddle/resources/activiti');
 
 var bpmnJS = new BpmnJS({
   additionalModules: [
@@ -89,7 +89,7 @@ var bpmnJS = new BpmnJS({
   },
   // make camunda prefix known for import, editing and export
   moddleExtensions: {
-    camunda: camundaModdleDescriptor
+    activiti: activitiModdleDescriptor
   }
 });
 

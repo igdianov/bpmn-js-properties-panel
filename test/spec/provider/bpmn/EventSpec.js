@@ -527,7 +527,7 @@ describe('event-properties', function() {
         escalationEventDefinition = eventDefinitionHelper.getEscalationEventDefinition(shape);
 
     expect(escalationCodeVar.value).to.equal('myEscalationVariable');
-    expect(escalationEventDefinition.get('camunda:escalationCodeVariable')).to.equal(escalationCodeVar.value);
+    expect(escalationEventDefinition.get('activiti:escalationCodeVariable')).to.equal(escalationCodeVar.value);
 
   }));
 
@@ -542,14 +542,14 @@ describe('event-properties', function() {
 
     // given
     expect(escalationCodeVar.value).to.equal('myEscalationVariable');
-    expect(escalationEventDefinition.get('camunda:escalationCodeVariable')).to.equal(escalationCodeVar.value);
+    expect(escalationEventDefinition.get('activiti:escalationCodeVariable')).to.equal(escalationCodeVar.value);
 
     // when
     TestHelper.triggerValue(escalationCodeVar, 'myNewEscalationVar', 'change');
 
     // then
     expect(escalationCodeVar.value).to.equal('myNewEscalationVar');
-    expect(escalationEventDefinition.get('camunda:escalationCodeVariable')).to.equal(escalationCodeVar.value);
+    expect(escalationEventDefinition.get('activiti:escalationCodeVariable')).to.equal(escalationCodeVar.value);
 
   }));
 
@@ -566,14 +566,14 @@ describe('event-properties', function() {
 
     // given
     expect(escalationCodeVar.value).to.equal('myEscalationVariable');
-    expect(escalationEventDefinition.get('camunda:escalationCodeVariable')).to.equal(escalationCodeVar.value);
+    expect(escalationEventDefinition.get('activiti:escalationCodeVariable')).to.equal(escalationCodeVar.value);
 
     // when
     TestHelper.triggerEvent(clearButton, 'click');
 
     // then
     expect(escalationCodeVar.value).to.be.empty;
-    expect(escalationEventDefinition.get('camunda:escalationCodeVariable')).to.be.undefined;
+    expect(escalationEventDefinition.get('activiti:escalationCodeVariable')).to.be.undefined;
 
   }));
 

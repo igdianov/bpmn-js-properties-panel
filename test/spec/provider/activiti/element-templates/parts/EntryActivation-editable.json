@@ -1,0 +1,62 @@
+[
+  {
+    "name": "EditableTask",
+    "id": "task.editable",
+    "appliesTo": [
+      "bpmn:Task"
+    ],
+    "properties": [
+      {
+        "label": "Editable Checkbox",
+        "type": "Boolean",
+        "binding": {
+          "type": "property",
+          "name": "activiti:asyncBefore"
+        }
+      },
+      {
+        "label": "Readonly Checkbox",
+        "type": "Boolean",
+        "editable": false,
+        "binding": {
+          "type": "property",
+          "name": "activiti:asyncBefore"
+        }
+      },
+      {
+        "label": "Editable Input",
+        "type": "String",
+        "binding": {
+          "type": "property",
+          "name": "activiti:javaDelegate"
+        }
+      },
+      {
+        "label": "Readonly Input",
+        "type": "String",
+        "editable": false,
+        "binding": {
+          "type": "property",
+          "name": "activiti:javaDelegate"
+        }
+      },
+      {
+        "label": "Editable Text",
+        "type": "Text",
+        "binding": {
+          "type": "activiti:inputParameter",
+          "name": "template"
+        }
+      },
+      {
+        "label": "Readonly Text",
+        "type": "Text",
+        "editable": false,
+        "binding": {
+          "type": "activiti:inputParameter",
+          "name": "template"
+        }
+      }
+    ]
+  }
+]

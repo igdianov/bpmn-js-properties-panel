@@ -171,7 +171,7 @@ describe('event-properties', function() {
       var textField = domQuery('input[name=variableName]', propertiesPanel._container);
 
       // then
-      expect(textField.value).to.equal(bo.eventDefinitions[0].get('camunda:variableName'));
+      expect(textField.value).to.equal(bo.eventDefinitions[0].get('activiti:variableName'));
 
     }));
 
@@ -188,7 +188,7 @@ describe('event-properties', function() {
       var textField = domQuery('input[name=variableEvent]', propertiesPanel._container);
 
       // then
-      expect(textField.value).to.equal(bo.eventDefinitions[0].get('camunda:variableEvent'));
+      expect(textField.value).to.equal(bo.eventDefinitions[0].get('activiti:variableEvent'));
 
     }));
 
@@ -241,7 +241,7 @@ describe('event-properties', function() {
       describe('on the business object', function() {
 
         it('should execute', function() {
-          expect(bo.eventDefinitions[0].get('camunda:variableName')).to.equal('FOO');
+          expect(bo.eventDefinitions[0].get('activiti:variableName')).to.equal('FOO');
         });
 
         it('should undo', inject(function(commandStack) {
@@ -249,7 +249,7 @@ describe('event-properties', function() {
           commandStack.undo();
 
           // then
-          expect(bo.eventDefinitions[0].get('camunda:variableName')).to.equal('myVar');
+          expect(bo.eventDefinitions[0].get('activiti:variableName')).to.equal('myVar');
         }));
 
 
@@ -259,7 +259,7 @@ describe('event-properties', function() {
           commandStack.redo();
 
           // then
-          expect(bo.eventDefinitions[0].get('camunda:variableName')).to.equal('FOO');
+          expect(bo.eventDefinitions[0].get('activiti:variableName')).to.equal('FOO');
         }));
 
       });
@@ -315,7 +315,7 @@ describe('event-properties', function() {
       describe('on the business object', function() {
 
         it('should execute', function() {
-          expect(bo.eventDefinitions[0].get('camunda:variableEvent')).to.equal('delete');
+          expect(bo.eventDefinitions[0].get('activiti:variableEvent')).to.equal('delete');
         });
 
         it('should undo', inject(function(commandStack) {
@@ -323,7 +323,7 @@ describe('event-properties', function() {
           commandStack.undo();
 
           // then
-          expect(bo.eventDefinitions[0].get('camunda:variableEvent')).to.equal('create, update');
+          expect(bo.eventDefinitions[0].get('activiti:variableEvent')).to.equal('create, update');
         }));
 
 
@@ -333,7 +333,7 @@ describe('event-properties', function() {
           commandStack.redo();
 
           // then
-          expect(bo.eventDefinitions[0].get('camunda:variableEvent')).to.equal('delete');
+          expect(bo.eventDefinitions[0].get('activiti:variableEvent')).to.equal('delete');
         }));
 
       });
@@ -355,7 +355,7 @@ describe('event-properties', function() {
       TestHelper.triggerValue(textField, 'myVar', 'change');
 
       // then
-      expect(textField.value).to.equal(bo.eventDefinitions[0].get('camunda:variableName'));
+      expect(textField.value).to.equal(bo.eventDefinitions[0].get('activiti:variableName'));
 
     }));
 
@@ -374,7 +374,7 @@ describe('event-properties', function() {
       TestHelper.triggerValue(textField, 'create, update', 'change');
 
       // then
-      expect(textField.value).to.equal(bo.eventDefinitions[0].get('camunda:variableEvent'));
+      expect(textField.value).to.equal(bo.eventDefinitions[0].get('activiti:variableEvent'));
 
     }));
 
@@ -394,7 +394,7 @@ describe('event-properties', function() {
 
       // then
       expect(textField.value).to.equal('');
-      expect(bo.eventDefinitions[0].get('camunda:variableName')).to.be.undefined;
+      expect(bo.eventDefinitions[0].get('activiti:variableName')).to.be.undefined;
 
     }));
 
@@ -414,7 +414,7 @@ describe('event-properties', function() {
 
       // then
       expect(textField.value).to.equal('');
-      expect(bo.eventDefinitions[0].get('camunda:variableEvent')).to.be.undefined;
+      expect(bo.eventDefinitions[0].get('activiti:variableEvent')).to.be.undefined;
 
     }));
 

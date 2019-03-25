@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.2.0-nightly">
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:activiti="http://activiti.org/bpmn" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.2.0-nightly">
   <bpmn:process id="Process_1" isExecutable="false">
     <bpmn:startEvent id="WITH_ERROR_REF" name="WITH_ERROR_REF">
       <bpmn:errorEventDefinition errorRef="Error_4" />
@@ -11,17 +11,17 @@
       <bpmn:errorEventDefinition errorRef="Error_2" />
     </bpmn:endEvent>
     <bpmn:startEvent id="ErrorStartEvent_ErrorCodeVariable" name="ErrorEndEvent_ErrorCode">
-      <bpmn:errorEventDefinition errorRef="Error_2" camunda:errorCodeVariable="myErrorCodeVariable" />
+      <bpmn:errorEventDefinition errorRef="Error_2" activiti:errorCodeVariable="myErrorCodeVariable" />
     </bpmn:startEvent>
     <bpmn:userTask id="UserTask" name="UserTask" />
     <bpmn:boundaryEvent id="ErrorBoundaryEvent_ErrorMessageVariable" name="ErrorBoundaryEvent_ErrorMessageVariable" attachedToRef="UserTask">
-      <bpmn:errorEventDefinition camunda:errorMessageVariable="myErrorMessageVariable" />
+      <bpmn:errorEventDefinition activiti:errorMessageVariable="myErrorMessageVariable" />
     </bpmn:boundaryEvent>
     <bpmn:startEvent id="ErrorStartEvent_Empty" name="ErrorStartEvent_Empty">
       <bpmn:errorEventDefinition />
     </bpmn:startEvent>
     <bpmn:boundaryEvent id="ErrorBoundaryEvent_All" name="ErrorBoundaryEvent_All" attachedToRef="UserTask">
-      <bpmn:errorEventDefinition errorRef="Error_2" camunda:errorCodeVariable="myErrorCodeVariable" camunda:errorMessageVariable="myErrorMessageVariable" />
+      <bpmn:errorEventDefinition errorRef="Error_2" activiti:errorCodeVariable="myErrorCodeVariable" activiti:errorMessageVariable="myErrorMessageVariable" />
     </bpmn:boundaryEvent>
   </bpmn:process>
   <bpmn:error id="Error_1" />

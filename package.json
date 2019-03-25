@@ -28,8 +28,7 @@
   "devDependencies": {
     "bpmn-js": "^3.1.0",
     "bpmn-moddle": "^5.1.6",
-    "camunda-bpmn-moddle": "^3.2.0",
-    "activiti-bpmn-moddle": "https://github.com/igdianov/activiti-bpmn-moddle/archive/v1.0.0.tar.gz",
+    "activiti-bpmn-moddle": "https://github.com/igdianov/activiti-bpmn-moddle/archive/v1.0.1.tar.gz",
     "chai": "^4.1.2",
     "diagram-js": "^3.1.0",
     "eslint": "^5.2.0",

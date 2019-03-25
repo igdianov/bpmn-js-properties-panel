@@ -170,7 +170,7 @@ describe('error-event-properties', function() {
 
       var field = getErrorCodeVariableField(container);
 
-      expect(field.value).to.equal(errorEventDefinition.get('camunda:errorCodeVariable'));
+      expect(field.value).to.equal(errorEventDefinition.get('activiti:errorCodeVariable'));
 
     });
 
@@ -179,7 +179,7 @@ describe('error-event-properties', function() {
 
       var field = getErrorMessageVariableField(container);
 
-      expect(field.value).to.equal(errorEventDefinition.get('camunda:errorMessageVariable'));
+      expect(field.value).to.equal(errorEventDefinition.get('activiti:errorMessageVariable'));
 
     });
 
@@ -387,7 +387,7 @@ describe('error-event-properties', function() {
       describe('on the business object', function() {
 
         it('should execute', function() {
-          expect(errorEventDefinition.get('camunda:errorCodeVariable')).to.equal('FOO');
+          expect(errorEventDefinition.get('activiti:errorCodeVariable')).to.equal('FOO');
         });
 
         it('should undo', inject(function(commandStack) {
@@ -395,7 +395,7 @@ describe('error-event-properties', function() {
           commandStack.undo();
 
           // then
-          expect(errorEventDefinition.get('camunda:errorCodeVariable')).to.be.undefined;
+          expect(errorEventDefinition.get('activiti:errorCodeVariable')).to.be.undefined;
         }));
 
 
@@ -405,7 +405,7 @@ describe('error-event-properties', function() {
           commandStack.redo();
 
           // then
-          expect(errorEventDefinition.get('camunda:errorCodeVariable')).to.equal('FOO');
+          expect(errorEventDefinition.get('activiti:errorCodeVariable')).to.equal('FOO');
         }));
 
       });
@@ -462,7 +462,7 @@ describe('error-event-properties', function() {
       describe('on the business object', function() {
 
         it('should execute', function() {
-          expect(errorEventDefinition.get('camunda:errorMessageVariable')).to.equal('FOO');
+          expect(errorEventDefinition.get('activiti:errorMessageVariable')).to.equal('FOO');
         });
 
         it('should undo', inject(function(commandStack) {
@@ -470,7 +470,7 @@ describe('error-event-properties', function() {
           commandStack.undo();
 
           // then
-          expect(errorEventDefinition.get('camunda:errorMessageVariable')).to.be.undefined;
+          expect(errorEventDefinition.get('activiti:errorMessageVariable')).to.be.undefined;
         }));
 
 
@@ -480,7 +480,7 @@ describe('error-event-properties', function() {
           commandStack.redo();
 
           // then
-          expect(errorEventDefinition.get('camunda:errorMessageVariable')).to.equal('FOO');
+          expect(errorEventDefinition.get('activiti:errorMessageVariable')).to.equal('FOO');
         }));
 
       });
@@ -825,7 +825,7 @@ describe('error-event-properties', function() {
       describe('on the business object', function() {
 
         it('should execute', function() {
-          expect(errorEventDefinition.get('camunda:errorCodeVariable')).to.be.undefined;
+          expect(errorEventDefinition.get('activiti:errorCodeVariable')).to.be.undefined;
         });
 
         it('should undo', inject(function(commandStack) {
@@ -833,7 +833,7 @@ describe('error-event-properties', function() {
           commandStack.undo();
 
           // then
-          expect(errorEventDefinition.get('camunda:errorCodeVariable')).to.equal('myErrorCodeVariable');
+          expect(errorEventDefinition.get('activiti:errorCodeVariable')).to.equal('myErrorCodeVariable');
         }));
 
 
@@ -843,7 +843,7 @@ describe('error-event-properties', function() {
           commandStack.redo();
 
           // then
-          expect(errorEventDefinition.get('camunda:errorCodeVariable')).to.be.undefined;
+          expect(errorEventDefinition.get('activiti:errorCodeVariable')).to.be.undefined;
         }));
 
       });
@@ -893,7 +893,7 @@ describe('error-event-properties', function() {
       describe('on the business object', function() {
 
         it('should execute', function() {
-          expect(errorEventDefinition.get('camunda:errorMessageVariable')).to.be.undefined;
+          expect(errorEventDefinition.get('activiti:errorMessageVariable')).to.be.undefined;
         });
 
         it('should undo', inject(function(commandStack) {
@@ -901,7 +901,7 @@ describe('error-event-properties', function() {
           commandStack.undo();
 
           // then
-          expect(errorEventDefinition.get('camunda:errorMessageVariable')).to.equal('myErrorMessageVariable');
+          expect(errorEventDefinition.get('activiti:errorMessageVariable')).to.equal('myErrorMessageVariable');
         }));
 
 
@@ -911,7 +911,7 @@ describe('error-event-properties', function() {
           commandStack.redo();
 
           // then
-          expect(errorEventDefinition.get('camunda:errorMessageVariable')).to.be.undefined;
+          expect(errorEventDefinition.get('activiti:errorMessageVariable')).to.be.undefined;
         }));
 
       });

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:activiti="http://activiti.org/bpmn" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn">
+  <bpmn:process id="Process_1" isExecutable="false">
+    <bpmn:serviceTask id="WITHOUT_INPUT_OUTPUT" name="Without Input/Output" />
+    <bpmn:serviceTask id="WITH_INPUT_PARAMS" name="With Input">
+      <bpmn:extensionElements>
+        <activiti:inputOutput>
+          <activiti:inputParameter name="input1">hello world!</activiti:inputParameter>
+          <activiti:inputParameter name="input2">
+            <activiti:script scriptFormat="javascript"><![CDATA[var foo = 'bar';]]></activiti:script>
+          </activiti:inputParameter>
+          <activiti:inputParameter name="input3">
+            <activiti:list>
+              <activiti:value>item1</activiti:value>
+            </activiti:list>
+          </activiti:inputParameter>
+          <activiti:inputParameter name="input4">
+            <activiti:map>
+              <activiti:entry key="entryKey1">entryValue1</activiti:entry>
+            </activiti:map>
+          </activiti:inputParameter>
+        </activiti:inputOutput>
+        <activiti:executionListener expression="${abc}" event="end" />
+      </bpmn:extensionElements>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="WITH_OUTPUT_PARAMS" name="With Output">
+      <bpmn:extensionElements>
+        <activiti:inputOutput>
+          <activiti:outputParameter name="output1">hello world!</activiti:outputParameter>
+          <activiti:outputParameter name="output2">
+            <activiti:script scriptFormat="javascript"><![CDATA[var foo = 'bar';]]></activiti:script>
+          </activiti:outputParameter>
+          <activiti:outputParameter name="output3">
+            <activiti:list>
+              <activiti:value>item1</activiti:value>
+            </activiti:list>
+          </activiti:outputParameter>
+          <activiti:outputParameter name="output4">
+            <activiti:map>
+              <activiti:entry key="entryKey1">entryValue1</activiti:entry>
+            </activiti:map>
+          </activiti:outputParameter>
+        </activiti:inputOutput>
+      </bpmn:extensionElements>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="WITH_INPUT_OUTPUT_PARAMS" name="With Input/Output">
+      <bpmn:extensionElements>
+        <activiti:inputOutput>
+          <activiti:inputParameter name="input1">hello world!</activiti:inputParameter>
+          <activiti:inputParameter name="input2">
+            <activiti:script scriptFormat="javascript"><![CDATA[var foo = 'bar';]]></activiti:script>
+          </activiti:inputParameter>
+          <activiti:inputParameter name="input3">
+            <activiti:list>
+              <activiti:value>item1</activiti:value>
+            </activiti:list>
+          </activiti:inputParameter>
+          <activiti:inputParameter name="input4">
+            <activiti:map>
+              <activiti:entry key="entryKey1">entryValue1</activiti:entry>
+            </activiti:map>
+          </activiti:inputParameter>
+          <activiti:outputParameter name="output1">hello world!</activiti:outputParameter>
+          <activiti:outputParameter name="output2">
+            <activiti:script scriptFormat="javascript"><![CDATA[var foo = 'bar';]]></activiti:script>
+          </activiti:outputParameter>
+          <activiti:outputParameter name="output3">
+            <activiti:list>
+              <activiti:value>item1</activiti:value>
+            </activiti:list>
+          </activiti:outputParameter>
+          <activiti:outputParameter name="output4">
+            <activiti:map>
+              <activiti:entry key="entryKey1">entryValue1</activiti:entry>
+            </activiti:map>
+          </activiti:outputParameter>
+        </activiti:inputOutput>
+      </bpmn:extensionElements>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="MAP_LIST_INPUT" name="With complex Map and List">
+      <bpmn:extensionElements>
+        <activiti:inputOutput>
+          <activiti:inputParameter name="list">
+            <activiti:list>
+              <activiti:script />
+              <activiti:list />
+              <activiti:map />
+            </activiti:list>
+          </activiti:inputParameter>
+          <activiti:inputParameter name="map">
+            <activiti:map>
+              <activiti:entry key="key1"><activiti:script /></activiti:entry>
+              <activiti:entry key="key2"><activiti:list /></activiti:entry>
+              <activiti:entry key="key3"><activiti:map /></activiti:entry>
+            </activiti:map>
+          </activiti:inputParameter>
+        </activiti:inputOutput>
+      </bpmn:extensionElements>
+    </bpmn:serviceTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">
+      <bpmndi:BPMNShape id="ServiceTask_1ylhfws_di" bpmnElement="WITHOUT_INPUT_OUTPUT">
+        <dc:Bounds x="131" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_1c1lbxd_di" bpmnElement="WITH_INPUT_PARAMS">
+        <dc:Bounds x="265" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_0ml0kh0_di" bpmnElement="WITH_OUTPUT_PARAMS">
+        <dc:Bounds x="399" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_1eyqyj1_di" bpmnElement="WITH_INPUT_OUTPUT_PARAMS">
+        <dc:Bounds x="546" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_0xna5p3_di" bpmnElement="MAP_LIST_INPUT">
+        <dc:Bounds x="131" y="213" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

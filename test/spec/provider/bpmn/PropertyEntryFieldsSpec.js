@@ -13,8 +13,8 @@ var propertiesPanelModule = require('lib'),
     coreModule = require('bpmn-js/lib/core').default,
     selectionModule = require('diagram-js/lib/features/selection').default,
     modelingModule = require('bpmn-js/lib/features/modeling').default,
-    propertiesProviderModule = require('lib/provider/camunda'),
-    camundaModdlePackage = require('camunda-bpmn-moddle/resources/camunda');
+    propertiesProviderModule = require('lib/provider/activiti'),
+    activitiModdlePackage = require('activiti-bpmn-moddle/resources/activiti');
 
 
 describe('properties-entry-fields', function() {
@@ -35,7 +35,7 @@ describe('properties-entry-fields', function() {
 
   beforeEach(bootstrapModeler(diagramXML, {
     modules: testModules,
-    moddleExtensions: { camunda: camundaModdlePackage }
+    moddleExtensions: { activiti: activitiModdlePackage }
   }));
 
 

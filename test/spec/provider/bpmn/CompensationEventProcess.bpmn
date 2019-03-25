@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn">
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:activiti="http://activiti.org/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn">
   <bpmn:process id="Process_1" isExecutable="false">
     <bpmn:startEvent id="StartEvent_1">
       <bpmn:outgoing>SequenceFlow_15ws3et</bpmn:outgoing>
@@ -14,7 +14,7 @@
       <bpmn:outgoing>SequenceFlow_1wthfnm</bpmn:outgoing>
     </bpmn:parallelGateway>
     <bpmn:sequenceFlow id="SequenceFlow_1fbrow3" sourceRef="ParallelGateway_11v0zvf" targetRef="withCompensationBoundaryEvent" />
-    <bpmn:serviceTask id="chargeCreditCard" name="Charge credit card" camunda:expression="#{foo}">
+    <bpmn:serviceTask id="chargeCreditCard" name="Charge credit card" activiti:expression="#{foo}">
       <bpmn:incoming>SequenceFlow_07du4ul</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_07e1j80</bpmn:outgoing>
     </bpmn:serviceTask>
@@ -42,7 +42,7 @@
       </bpmn:startEvent>
       <bpmn:sequenceFlow id="SequenceFlow_18y39dy" sourceRef="StartEvent_0lyaazm" targetRef="nothingToDo" />
       <bpmn:sequenceFlow id="SequenceFlow_1devkxq" sourceRef="nothingToDo" targetRef="eventSubProcessTask" />
-      <bpmn:userTask id="nothingToDo" name="nothing to do" camunda:assignee="admin">
+      <bpmn:userTask id="nothingToDo" name="nothing to do" activiti:assignee="admin">
         <bpmn:incoming>SequenceFlow_18y39dy</bpmn:incoming>
         <bpmn:outgoing>SequenceFlow_1devkxq</bpmn:outgoing>
       </bpmn:userTask>
@@ -51,7 +51,7 @@
         <bpmn:compensateEventDefinition />
       </bpmn:endEvent>
       <bpmn:sequenceFlow id="SequenceFlow_1bakda1" sourceRef="eventSubProcessTask" targetRef="CompensationEndEvent_19qhaq3" />
-      <bpmn:serviceTask id="eventSubProcessTask" name="event subprocess task" camunda:expression="#{foo}">
+      <bpmn:serviceTask id="eventSubProcessTask" name="event subprocess task" activiti:expression="#{foo}">
         <bpmn:incoming>SequenceFlow_1devkxq</bpmn:incoming>
         <bpmn:outgoing>SequenceFlow_1bakda1</bpmn:outgoing>
       </bpmn:serviceTask>
@@ -60,7 +60,7 @@
       </bpmn:boundaryEvent>
     </bpmn:subProcess>
     <bpmn:sequenceFlow id="SequenceFlow_07du4ul" sourceRef="withCompensationBoundaryEvent" targetRef="chargeCreditCard" />
-    <bpmn:serviceTask id="withCompensationBoundaryEvent" name="with Compensation BoundaryEvent" camunda:expression="#{foo}">
+    <bpmn:serviceTask id="withCompensationBoundaryEvent" name="with Compensation BoundaryEvent" activiti:expression="#{foo}">
       <bpmn:incoming>SequenceFlow_1fbrow3</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_07du4ul</bpmn:outgoing>
     </bpmn:serviceTask>
@@ -84,11 +84,11 @@
       <bpmn:endEvent id="EndEvent_0mt086w">
         <bpmn:incoming>SequenceFlow_0wbznz1</bpmn:incoming>
       </bpmn:endEvent>
-      <bpmn:userTask id="reviewBookings" name="Review bookings" camunda:assignee="admin">
+      <bpmn:userTask id="reviewBookings" name="Review bookings" activiti:assignee="admin">
         <bpmn:incoming>SequenceFlow_1uke9a3</bpmn:incoming>
         <bpmn:outgoing>SequenceFlow_0wbznz1</bpmn:outgoing>
       </bpmn:userTask>
-      <bpmn:serviceTask id="bookHotel" name="Book hotel" camunda:expression="#{foo}">
+      <bpmn:serviceTask id="bookHotel" name="Book hotel" activiti:expression="#{foo}">
         <bpmn:incoming>SequenceFlow_1fkyxdt</bpmn:incoming>
         <bpmn:outgoing>SequenceFlow_1uke9a3</bpmn:outgoing>
       </bpmn:serviceTask>
