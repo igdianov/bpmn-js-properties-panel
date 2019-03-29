@@ -641,8 +641,8 @@ describe('element-templates/parts - Custom Properties', function() {
           selectAndGet('ConnectorTask');
 
           // when
-          var connectorIdEntry = entrySelect('custom-my.connector.Task-camunda_Connector-0'),
-              inputText = entrySelect('custom-my.connector.Task-camunda_Connector-0', '[type=text]');
+          var connectorIdEntry = entrySelect('custom-my.connector.Task-activiti_Connector-0'),
+              inputText = entrySelect('custom-my.connector.Task-activiti_Connector-0', '[type=text]');
 
           // then
           expect(connectorIdEntry).to.exist;
@@ -655,7 +655,7 @@ describe('element-templates/parts - Custom Properties', function() {
           // given
           selectAndGet('ConnectorTask');
 
-          var entryId = 'custom-my.connector.Task-camunda_Connector-0';
+          var entryId = 'custom-my.connector.Task-activiti_Connector-0';
           var inputText = entrySelect(entryId, '[type=text]');
 
           // assume
@@ -681,7 +681,7 @@ describe('element-templates/parts - Custom Properties', function() {
           selectAndGet('ConnectorTask');
 
           // when
-          var entryId = 'custom-my.connector.Task-camunda_Connector-1';
+          var entryId = 'custom-my.connector.Task-activiti_Connector-1';
           var inputText = entrySelect(entryId, '[type=text]');
 
           // assume
@@ -703,7 +703,7 @@ describe('element-templates/parts - Custom Properties', function() {
           selectAndGet('ConnectorTask');
 
           // when
-          var entryId = 'custom-my.connector.Task-camunda_Connector-3';
+          var entryId = 'custom-my.connector.Task-activiti_Connector-3';
           var hiddenField = entrySelect(entryId, '*');
 
           // then
@@ -716,7 +716,7 @@ describe('element-templates/parts - Custom Properties', function() {
           // given
           var task = selectAndGet('ConnectorTask');
 
-          var entryId = 'custom-my.connector.Task-camunda_Connector-1';
+          var entryId = 'custom-my.connector.Task-activiti_Connector-1';
           var urlField = entrySelect(entryId, 'input');
 
           // when
@@ -741,7 +741,7 @@ describe('element-templates/parts - Custom Properties', function() {
           // given
           var task = selectAndGet('ConnectorTask');
 
-          var entryId = 'custom-my.connector.Task-camunda_Connector-4';
+          var entryId = 'custom-my.connector.Task-activiti_Connector-4';
           var templateField = entrySelect(entryId, 'div[contenteditable]');
 
           // when
@@ -771,7 +771,7 @@ describe('element-templates/parts - Custom Properties', function() {
           // given
           var task = selectAndGet('ConnectorTask');
 
-          var entryId = 'custom-my.connector.Task-camunda_Connector-2';
+          var entryId = 'custom-my.connector.Task-activiti_Connector-2';
           var recipientField = entrySelect(entryId, 'select');
 
           // assume
@@ -803,7 +803,7 @@ describe('element-templates/parts - Custom Properties', function() {
           // given
           var task = selectAndGet('ConnectorTask_NoData');
 
-          var entryId = 'custom-my.connector.Task-camunda_Connector-1';
+          var entryId = 'custom-my.connector.Task-activiti_Connector-1';
           var recipientField = entrySelect(entryId, 'input');
 
           // assume
@@ -839,7 +839,7 @@ describe('element-templates/parts - Custom Properties', function() {
           // given
           selectAndGet('ConnectorTask');
 
-          var entryId = 'custom-my.connector.Task-camunda_Connector-5';
+          var entryId = 'custom-my.connector.Task-activiti_Connector-5';
           var responseField = entrySelect(entryId, 'input');
 
           // then
@@ -852,7 +852,7 @@ describe('element-templates/parts - Custom Properties', function() {
           var task = selectAndGet('ConnectorTask');
 
           // when
-          var entryId = 'custom-my.connector.Task-camunda_Connector-5';
+          var entryId = 'custom-my.connector.Task-activiti_Connector-5';
           var responseField = entrySelect(entryId, 'input');
 
           // when
@@ -877,7 +877,7 @@ describe('element-templates/parts - Custom Properties', function() {
           var task = selectAndGet('ConnectorTask');
 
           // when
-          var entryId = 'custom-my.connector.Task-camunda_Connector-6';
+          var entryId = 'custom-my.connector.Task-activiti_Connector-6';
           var resultField = entrySelect(entryId, 'input');
 
           // when
@@ -910,7 +910,7 @@ describe('element-templates/parts - Custom Properties', function() {
           var task = selectAndGet('ConnectorTask_NoData');
 
           // when
-          var entryId = 'custom-my.connector.Task-camunda_Connector-6';
+          var entryId = 'custom-my.connector.Task-activiti_Connector-6';
           var resultField = entrySelect(entryId, 'input');
 
           // when
