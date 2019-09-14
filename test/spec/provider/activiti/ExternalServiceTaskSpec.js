@@ -193,7 +193,7 @@ describe('external-service-task-properties', function() {
         implType = TestHelper.selectedByIndex(domQuery('select[name=implType]', propertiesPanel._container)),
         businessObject = getBusinessObject(shape);
 
-    expect(implType.value).to.equal('');
+    expect(implType.value).to.equal('implementation');
     expect(topicField.value).to.be.empty;
     expect(businessObject.get('type')).to.be.equal('mail');
   }));

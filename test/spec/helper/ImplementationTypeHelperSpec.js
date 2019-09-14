@@ -21,13 +21,13 @@ describe('implementation type', function() {
     });
 
 
-    it('should return no implementation type', function() {
+    it('should return default implementation type', function() {
 
       // when
       var type = ImplementationTypeHelper.getImplementationType(serviceTask);
 
       // then
-      expect(type).to.be.undefined;
+      expect(type).to.equal('implementation');
     });
 
 

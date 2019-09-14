@@ -292,7 +292,7 @@ describe('service-task-delegate-properties', function() {
         businessObject = getBusinessObject(shape);
 
     // given
-    expect(implType.value).to.equal('');
+    expect(implType.value).to.equal('implementation');
     expect(businessObject.get('activiti:expression')).to.not.exist;
     expect(businessObject.get('activiti:class')).to.not.exist;
     expect(businessObject.get('activiti:delegateExpression')).to.not.exist;
@@ -332,7 +332,7 @@ describe('service-task-delegate-properties', function() {
         delegateField = domQuery('input[name="delegate"]', propertiesPanel._container);
 
     // given
-    expect(implType.value).to.be.empty;
+    expect(implType.value).to.equal('implementation');
 
     // when
     // select implType 'expression'
