@@ -55,10 +55,6 @@ function getAsyncBefore(container) {
   return getInputField(container, 'multiInstance-async', 'async');
 }
 
-// function getAsyncAfter(container) {
-//   return getInputField(container, 'multiInstance-asyncAfter', 'asyncAfter');
-// }
-
 function getExclusive(container) {
   return getInputField(container, 'multiInstance-exclusive', 'exclusive');
 }
@@ -1193,39 +1189,6 @@ describe('multiInstance-loop-properties', function() {
     expect(businessObject.get('async')).to.not.be.ok;
     expect(input.checked).to.not.be.ok;
   }));
-
-
-  // it('should fetch the multi instance async after property for an element', inject(function(propertiesPanel, selection, elementRegistry) {
-
-  //   var shape = elementRegistry.get('ServiceTask');
-  //   selection.select(shape);
-
-  //   var input = getAsyncAfter(propertiesPanel._container),
-  //       businessObject = getBusinessObject(shape).get('loopCharacteristics');
-
-  //   expect(input.checked).to.equal(!!businessObject.get('asyncAfter'));
-  //   expect(input.checked).to.not.be.ok;
-  // }));
-
-
-  // it('should set the multi instance async after property for an element', inject(function(propertiesPanel, selection, elementRegistry) {
-
-  //   var shape = elementRegistry.get('ServiceTask');
-  //   selection.select(shape);
-
-  //   var businessObject = getBusinessObject(shape).get('loopCharacteristics');
-  //   var input = getAsyncAfter(propertiesPanel._container);
-
-  //   // given
-  //   expect(input.checked).to.not.be.ok;
-
-  //   // when
-  //   TestHelper.triggerEvent(input, 'click');
-
-  //   // then
-  //   expect(businessObject.get('async')).to.be.ok;
-  //   expect(input.checked).to.be.ok;
-  // }));
 
 
   it('should fetch the multi instance exclusive property for an element', inject(function(propertiesPanel, selection, elementRegistry) {

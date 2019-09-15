@@ -19,10 +19,6 @@ function getActivitiAsync(container) {
   return domQuery('div[data-entry=async] input[name=async]', container);
 }
 
-// function getAsyncAfter(container) {
-//   return domQuery('div[data-entry=asyncAfter] input[name=asyncAfter]', container);
-// }
-
 function getExclusive(container) {
   return domQuery('div[data-entry=exclusive] input[name=exclusive]', container);
 }
@@ -130,80 +126,6 @@ describe('flow-node-properties', function() {
     // the value is true in the model
     expect(taskBo.get('async')).to.be.ok;
   }));
-
-
-  // it('should set the asyncAfter property of a gateway flow node', inject(function(propertiesPanel, selection, elementRegistry) {
-
-  //   // given
-  //   var shape = elementRegistry.get('InclusiveGateway_1');
-
-  //   selection.select(shape);
-
-  //   var asyncAfter = getAsyncAfter(propertiesPanel._container),
-  //       taskBo = getBusinessObject(shape);
-
-  //   // assume
-  //   // that the asyncAfter is false
-  //   expect(taskBo.get('asyncAfter')).to.not.be.ok;
-
-  //   // when
-  //   // I click on the checkbox
-  //   TestHelper.triggerEvent(asyncAfter, 'click');
-
-  //   // then
-  //   // the value is true in the model
-  //   expect(taskBo.get('asyncAfter')).to.be.ok;
-  // }));
-
-
-  // it('should set the asyncAfter property of a event flow node', inject(function(propertiesPanel, selection, elementRegistry) {
-
-  //   // given
-  //   var shape = elementRegistry.get('IntermediateThrowEvent_1');
-
-  //   selection.select(shape);
-
-  //   var checkbox = getAsyncAfter(propertiesPanel._container),
-  //       taskBo = getBusinessObject(shape);
-
-  //   // assume
-  //   // that the asyncAfter property is false (unset)
-  //   expect(taskBo.get('asyncAfter')).to.not.be.ok;
-  //   expect(checkbox.selected).to.not.be.true;
-
-  //   // when
-  //   // I click on the checkbox
-  //   TestHelper.triggerEvent(checkbox, 'click');
-
-  //   // then
-  //   // the value is true in the model
-  //   expect(taskBo.get('asyncAfter')).to.be.ok;
-
-  // }));
-
-
-  // it('should set the asyncAfter property of a activity flow node', inject(function(propertiesPanel, selection, elementRegistry) {
-
-  //   // given
-  //   var shape = elementRegistry.get('CallActivity_2');
-
-  //   selection.select(shape);
-
-  //   var asyncAfter = getAsyncAfter(propertiesPanel._container),
-  //       taskBo = getBusinessObject(shape);
-
-  //   // assume
-  //   // that the asyncAfter is false (unset)
-  //   expect(taskBo.get('asyncAfter')).to.not.be.ok;
-
-  //   // when
-  //   // I click on the checkbox
-  //   TestHelper.triggerEvent(asyncAfter, 'click');
-
-  //   // then
-  //   // the value is true in the model
-  //   expect(taskBo.get('asyncAfter')).to.be.ok;
-  // }));
 
 
   it('should fetch the exclusive property for a flow node', inject(function(propertiesPanel, selection, elementRegistry) {
