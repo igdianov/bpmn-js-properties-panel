@@ -7,7 +7,7 @@
 
   <bpmn2:process id="Process_1" isExecutable="false" activiti:jobPriority="9000">
 
-    <bpmn2:serviceTask id="ServiceTask" activiti:asyncBefore="true" activiti:jobPriority="100" />
+    <bpmn2:serviceTask id="ServiceTask" activiti:async="true" activiti:jobPriority="100" />
 
     <bpmn2:intermediateCatchEvent id="IntermediateCatchEvent">
       <bpmn2:timerEventDefinition id="_TimerEventDefinition_2"/>

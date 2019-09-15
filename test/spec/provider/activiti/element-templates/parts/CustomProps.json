@@ -168,7 +168,7 @@
         "value": true,
         "binding": {
           "type": "property",
-          "name": "activiti:asyncBefore"
+          "name": "activiti:async"
         }
       }
     ],
@@ -176,8 +176,7 @@
       "_all": false,
       "id": true,
       "name": true,
-      "asyncBefore": true,
-      "asyncAfter": true,
+      "async": true,
       "executionListeners": true,
       "documentation": true
     }

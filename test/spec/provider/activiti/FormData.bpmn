@@ -39,7 +39,7 @@
         <activiti:taskListener expression="abc" event="assignment" />
       </bpmn2:extensionElements>
     </bpmn2:userTask>
-    <bpmn2:userTask id="UserTask_3" activiti:asyncAfter="true">
+    <bpmn2:userTask id="UserTask_3" activiti:async="true">
       <bpmn2:extensionElements>
         <activiti:failedJobRetryTimeCycle>123</activiti:failedJobRetryTimeCycle>
       </bpmn2:extensionElements>

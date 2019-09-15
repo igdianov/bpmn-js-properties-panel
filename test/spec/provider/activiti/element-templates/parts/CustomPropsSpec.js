@@ -55,7 +55,7 @@ describe('element-templates/parts - Custom Properties', function() {
         TestHelper.triggerEvent(checkbox, 'click');
 
         // then
-        expect(task.get('activiti:asyncBefore')).to.be.false;
+        expect(task.get('activiti:async')).to.be.false;
       }));
 
 

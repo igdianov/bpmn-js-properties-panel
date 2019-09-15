@@ -52,11 +52,7 @@ function getErrorMessageEntry(container) {
 }
 
 function getAsyncBefore(container) {
-  return getInputField(container, 'multiInstance-asyncBefore', 'asyncBefore');
-}
-
-function getAsyncAfter(container) {
-  return getInputField(container, 'multiInstance-asyncAfter', 'asyncAfter');
+  return getInputField(container, 'multiInstance-async', 'async');
 }
 
 function getExclusive(container) {
@@ -1168,7 +1164,7 @@ describe('multiInstance-loop-properties', function() {
     var input = getAsyncBefore(propertiesPanel._container),
         businessObject = getBusinessObject(shape).get('loopCharacteristics');
 
-    expect(input.checked).to.equal(!!businessObject.get('asyncBefore'));
+    expect(input.checked).to.equal(!!businessObject.get('async'));
     expect(input.checked).to.be.ok;
   }));
 
@@ -1190,41 +1186,8 @@ describe('multiInstance-loop-properties', function() {
     var businessObject = getBusinessObject(shape).get('loopCharacteristics');
 
     // then
-    expect(businessObject.get('asyncBefore')).to.not.be.ok;
+    expect(businessObject.get('async')).to.not.be.ok;
     expect(input.checked).to.not.be.ok;
-  }));
-
-
-  it('should fetch the multi instance async after property for an element', inject(function(propertiesPanel, selection, elementRegistry) {
-
-    var shape = elementRegistry.get('ServiceTask');
-    selection.select(shape);
-
-    var input = getAsyncAfter(propertiesPanel._container),
-        businessObject = getBusinessObject(shape).get('loopCharacteristics');
-
-    expect(input.checked).to.equal(!!businessObject.get('asyncAfter'));
-    expect(input.checked).to.not.be.ok;
-  }));
-
-
-  it('should set the multi instance async after property for an element', inject(function(propertiesPanel, selection, elementRegistry) {
-
-    var shape = elementRegistry.get('ServiceTask');
-    selection.select(shape);
-
-    var businessObject = getBusinessObject(shape).get('loopCharacteristics');
-    var input = getAsyncAfter(propertiesPanel._container);
-
-    // given
-    expect(input.checked).to.not.be.ok;
-
-    // when
-    TestHelper.triggerEvent(input, 'click');
-
-    // then
-    expect(businessObject.get('asyncBefore')).to.be.ok;
-    expect(input.checked).to.be.ok;
   }));
 
 
@@ -1266,16 +1229,16 @@ describe('multiInstance-loop-properties', function() {
     selection.select(shape);
 
     var exclusiveInput = getExclusive(propertiesPanel._container),
-        asyncBeforeInput = getAsyncBefore(propertiesPanel._container);
+        activitiAsyncInput = getAsyncBefore(propertiesPanel._container);
     var businessObject = getBusinessObject(shape).get('loopCharacteristics');
 
     // given
     expect(exclusiveInput.checked).to.be.ok;
-    expect(asyncBeforeInput.checked).to.be.ok;
+    expect(activitiAsyncInput.checked).to.be.ok;
 
     // when
     TestHelper.triggerEvent(exclusiveInput, 'click'); // change the value of the exclusive field
-    TestHelper.triggerEvent(asyncBeforeInput, 'click'); // reset the exclusive field
+    TestHelper.triggerEvent(activitiAsyncInput, 'click'); // reset the exclusive field
 
     // then
     expect(exclusiveInput.checked).to.equal(businessObject.get('exclusive'));
@@ -1303,11 +1266,11 @@ describe('multiInstance-loop-properties', function() {
 
     // given
     selection.select(shape);
-    var asyncBeforeInput = getAsyncBefore(propertiesPanel._container),
+    var activitiAsyncInput = getAsyncBefore(propertiesPanel._container),
         exclusiveEntry = getExclusive(propertiesPanel._container);
 
     // when
-    TestHelper.triggerEvent(asyncBeforeInput, 'click');
+    TestHelper.triggerEvent(activitiAsyncInput, 'click');
 
     // then
     expect(domClasses(exclusiveEntry).has(HIDE_CLASS)).to.be.false;
@@ -1418,11 +1381,11 @@ describe('multiInstance-loop-properties', function() {
 
     // given
     selection.select(shape);
-    var asyncBeforeInput = getAsyncBefore(propertiesPanel._container),
+    var activitiAsyncInput = getAsyncBefore(propertiesPanel._container),
         jobRetryEntry = getCycle(propertiesPanel._container);
 
     // when
-    TestHelper.triggerEvent(asyncBeforeInput, 'click');
+    TestHelper.triggerEvent(activitiAsyncInput, 'click');
 
     // then
     expect(domClasses(jobRetryEntry.parentElement).has(HIDE_CLASS)).to.be.false;

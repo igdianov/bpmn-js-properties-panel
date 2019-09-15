@@ -80,15 +80,15 @@ describe('camunda-properties', function() {
 
       var shape = elementRegistry.get('ServiceTask_1'),
           groupSelector = '[data-group=jobConfiguration]',
-          inputSelector = 'div[data-entry=asyncBefore] input[name=asyncBefore]';
+          inputSelector = 'div[data-entry=async] input[name=async]';
 
       // given
       selection.select(shape);
 
-      var asyncBeforeCheckbox = domQuery(inputSelector, propertiesPanel._container);
+      var activitiAsyncCheckbox = domQuery(inputSelector, propertiesPanel._container);
 
       // when
-      TestHelper.triggerEvent(asyncBeforeCheckbox, 'click');
+      TestHelper.triggerEvent(activitiAsyncCheckbox, 'click');
       var group = domQuery(groupSelector, propertiesPanel._container);
 
       // then

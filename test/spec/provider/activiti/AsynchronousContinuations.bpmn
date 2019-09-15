@@ -14,7 +14,7 @@
       <bpmn2:incoming>SequenceFlow_2</bpmn2:incoming>
     </bpmn2:callActivity>
     <bpmn2:sequenceFlow id="SequenceFlow_2" name="" sourceRef="IntermediateThrowEvent_1" targetRef="CallActivity_2" />
-    <bpmn2:serviceTask id="ServiceTask" activiti:asyncBefore="true">
+    <bpmn2:serviceTask id="ServiceTask" activiti:async="true">
       <bpmn2:extensionElements>
         <activiti:inputOutput>
           <activiti:inputParameter name="asd" />
@@ -22,12 +22,12 @@
         <activiti:failedJobRetryTimeCycle>asd</activiti:failedJobRetryTimeCycle>
       </bpmn2:extensionElements>
     </bpmn2:serviceTask>
-    <bpmn2:serviceTask id="ServiceTask2" activiti:asyncBefore="true">
+    <bpmn2:serviceTask id="ServiceTask2" activiti:async="true">
       <bpmn2:extensionElements>
         <activiti:failedJobRetryTimeCycle>asd</activiti:failedJobRetryTimeCycle>
       </bpmn2:extensionElements>
     </bpmn2:serviceTask>
-    <bpmn2:startEvent id="StartEvent_Timer" activiti:asyncBefore="true">
+    <bpmn2:startEvent id="StartEvent_Timer" activiti:async="true">
       <bpmn2:extensionElements>
         <activiti:failedJobRetryTimeCycle>R3/PT10S</activiti:failedJobRetryTimeCycle>
       </bpmn2:extensionElements>

@@ -95,7 +95,7 @@ describe('properties-entry-fields', function() {
   it('should create a checkbox field', inject(function(propertiesPanel, selection, elementRegistry) {
 
     // given
-    var inputEl = 'input[name=asyncBefore]';
+    var inputEl = 'input[name=async]';
     var userTaskShape = elementRegistry.get('UserTask');
 
     // when
