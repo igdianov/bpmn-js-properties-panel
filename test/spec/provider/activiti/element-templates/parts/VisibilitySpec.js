@@ -32,7 +32,7 @@ describe('element-templates/parts - Visibility', function() {
     ]);
 
     expectHidden([
-      'asyncBefore',
+      'async',
       'executionListeners'
     ]);
   }));
@@ -51,7 +51,7 @@ describe('element-templates/parts - Visibility', function() {
         'name',
         'elementTemplate-chooser',
         'documentation',
-        'asyncBefore',
+        'async',
         'executionListeners',
         'properties'
       ]);
@@ -73,8 +73,8 @@ describe('element-templates/parts - Visibility', function() {
 
       expectHidden([
         'name',
-        'asyncBefore',
-        'asyncAfter',
+        'async',
+        //'asyncAfter',
         'documentation',
         'executionListeners'
       ]);
@@ -89,8 +89,8 @@ describe('element-templates/parts - Visibility', function() {
       // then
       expectShown([
         'elementTemplate-chooser',
-        'asyncBefore',
-        'asyncAfter',
+        'async',
+        //'asyncAfter',
         'executionListeners',
         'documentation'
       ]);
