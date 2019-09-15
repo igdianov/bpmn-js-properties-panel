@@ -74,7 +74,6 @@ describe('element-templates/parts - Visibility', function() {
       expectHidden([
         'name',
         'async',
-        //'asyncAfter',
         'documentation',
         'executionListeners'
       ]);
@@ -90,7 +89,6 @@ describe('element-templates/parts - Visibility', function() {
       expectShown([
         'elementTemplate-chooser',
         'async',
-        //'asyncAfter',
         'executionListeners',
         'documentation'
       ]);

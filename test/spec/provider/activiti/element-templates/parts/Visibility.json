@@ -28,8 +28,7 @@
     "entriesVisible": {
       "_all": true,
       "name": false,
-      "asyncBefore": false,
-      "asyncAfter": false,
+      "async": false,
       "executionListeners": false,
       "documentation": false
     }
@@ -42,8 +41,7 @@
     ],
     "properties": [],
     "entriesVisible": {
-      "asyncBefore": true,
-      "asyncAfter": true,
+      "async": true,
       "executionListeners": true,
       "documentation": true
     }
