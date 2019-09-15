@@ -2,14 +2,14 @@
 <bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:activiti="http://activiti.org/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:fox="http://www.camunda.com/fox" id="_GcxxcClBEeW1G85egYVLqw" targetNamespace="http://activiti.org/bpmn" exporter="camunda modeler" exporterVersion="2.7.0" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd">
   <bpmn2:process id="Process_1" isExecutable="false">
     <bpmn2:serviceTask id="ServiceTask">
-      <bpmn2:multiInstanceLoopCharacteristics activiti:asyncBefore="true">
+      <bpmn2:multiInstanceLoopCharacteristics activiti:async="true">
         <bpmn2:loopCardinality xsi:type="bpmn2:tFormalExpression">card</bpmn2:loopCardinality>
         <bpmn2:completionCondition xsi:type="bpmn2:tFormalExpression">cond</bpmn2:completionCondition>
       </bpmn2:multiInstanceLoopCharacteristics>
     </bpmn2:serviceTask>
     <bpmn2:serviceTask id="ServiceTask2" />
     <bpmn2:serviceTask id="ServiceTask3">
-      <bpmn2:multiInstanceLoopCharacteristics activiti:asyncBefore="true" activiti:collection="coll" activiti:elementVariable="collVal">
+      <bpmn2:multiInstanceLoopCharacteristics activiti:async="true" activiti:collection="coll" activiti:elementVariable="collVal">
         <bpmn2:extensionElements>
           <fox:failedJobRetryTimeCycle>asd</fox:failedJobRetryTimeCycle>
           <activiti:failedJobRetryTimeCycle>asd</activiti:failedJobRetryTimeCycle>
@@ -23,7 +23,7 @@
       </bpmn2:multiInstanceLoopCharacteristics>
     </bpmn2:serviceTask>
     <bpmn2:serviceTask id="ServiceTask5">
-      <bpmn2:multiInstanceLoopCharacteristics activiti:asyncBefore="true" activiti:collection="coll" activiti:elementVariable="collVal">
+      <bpmn2:multiInstanceLoopCharacteristics activiti:async="true" activiti:collection="coll" activiti:elementVariable="collVal">
         <bpmn2:extensionElements>
           <activiti:failedJobRetryTimeCycle>asd</activiti:failedJobRetryTimeCycle>
         </bpmn2:extensionElements>

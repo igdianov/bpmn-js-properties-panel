@@ -80,7 +80,7 @@ describe('retryTimeCycle', function() {
 
     selection.select(shape);
 
-    var asyncField = domQuery('input[name=asyncBefore]', propertiesPanel._container),
+    var asyncField = domQuery('input[name=async]', propertiesPanel._container),
         retryField = domQuery(inputEl, propertiesPanel._container);
 
     // given

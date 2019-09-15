@@ -1266,16 +1266,16 @@ describe('multiInstance-loop-properties', function() {
     selection.select(shape);
 
     var exclusiveInput = getExclusive(propertiesPanel._container),
-        asyncBeforeInput = getAsyncBefore(propertiesPanel._container);
+        activitiAsyncInput = getAsyncBefore(propertiesPanel._container);
     var businessObject = getBusinessObject(shape).get('loopCharacteristics');
 
     // given
     expect(exclusiveInput.checked).to.be.ok;
-    expect(asyncBeforeInput.checked).to.be.ok;
+    expect(activitiAsyncInput.checked).to.be.ok;
 
     // when
     TestHelper.triggerEvent(exclusiveInput, 'click'); // change the value of the exclusive field
-    TestHelper.triggerEvent(asyncBeforeInput, 'click'); // reset the exclusive field
+    TestHelper.triggerEvent(activitiAsyncInput, 'click'); // reset the exclusive field
 
     // then
     expect(exclusiveInput.checked).to.equal(businessObject.get('exclusive'));
@@ -1303,11 +1303,11 @@ describe('multiInstance-loop-properties', function() {
 
     // given
     selection.select(shape);
-    var asyncBeforeInput = getAsyncBefore(propertiesPanel._container),
+    var activitiAsyncInput = getAsyncBefore(propertiesPanel._container),
         exclusiveEntry = getExclusive(propertiesPanel._container);
 
     // when
-    TestHelper.triggerEvent(asyncBeforeInput, 'click');
+    TestHelper.triggerEvent(activitiAsyncInput, 'click');
 
     // then
     expect(domClasses(exclusiveEntry).has(HIDE_CLASS)).to.be.false;
@@ -1418,11 +1418,11 @@ describe('multiInstance-loop-properties', function() {
 
     // given
     selection.select(shape);
-    var asyncBeforeInput = getAsyncBefore(propertiesPanel._container),
+    var activitiAsyncInput = getAsyncBefore(propertiesPanel._container),
         jobRetryEntry = getCycle(propertiesPanel._container);
 
     // when
-    TestHelper.triggerEvent(asyncBeforeInput, 'click');
+    TestHelper.triggerEvent(activitiAsyncInput, 'click');
 
     // then
     expect(domClasses(jobRetryEntry.parentElement).has(HIDE_CLASS)).to.be.false;

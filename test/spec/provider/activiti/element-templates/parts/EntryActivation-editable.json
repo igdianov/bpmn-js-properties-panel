@@ -11,7 +11,7 @@
         "type": "Boolean",
         "binding": {
           "type": "property",
-          "name": "activiti:asyncBefore"
+          "name": "activiti:async"
         }
       },
       {
@@ -20,7 +20,7 @@
         "editable": false,
         "binding": {
           "type": "property",
-          "name": "activiti:asyncBefore"
+          "name": "activiti:async"
         }
       },
       {

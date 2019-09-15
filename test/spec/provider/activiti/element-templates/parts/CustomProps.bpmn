@@ -30,7 +30,7 @@
         </activiti:inputOutput>
       </bpmn:extensionElements>
     </bpmn:task>
-    <bpmn:task id="AsyncTask" name="AsyncTask" activiti:asyncBefore="true" activiti:modelerTemplate="my.awesome.Task" />
+    <bpmn:task id="AsyncTask" name="AsyncTask" activiti:async="true" activiti:modelerTemplate="my.awesome.Task" />
     <bpmn:task id="WebserviceTask" name="Webservice Task" activiti:modelerTemplate="com.mycompany.WsCaller">
       <bpmn:extensionElements>
         <activiti:properties>

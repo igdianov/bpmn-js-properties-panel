@@ -122,11 +122,11 @@ describe('element-templates - cmd', function() {
         // when
         applyTemplate(taskShape, newTemplate);
 
-        var asyncBefore = task.get('activiti:asyncBefore'),
+        var activitiAsync = task.get('activiti:async'),
             elementTemplate = task.modelerTemplate;
 
         // then
-        expect(asyncBefore).to.be.true;
+        expect(activitiAsync).to.be.true;
         expect(elementTemplate).to.exist;
         expect(elementTemplate).to.equal('my.awesome.Task');
       }));
@@ -144,11 +144,11 @@ describe('element-templates - cmd', function() {
         // when
         commandStack.undo();
 
-        var asyncBefore = task.get('activiti:asyncBefore'),
+        var activitiAsync = task.get('activiti:async'),
             elementTemplate = task.modelerTemplate;
 
         // then
-        expect(asyncBefore).to.be.false;
+        expect(activitiAsync).to.be.false;
         expect(elementTemplate).not.to.exist;
       }));
 
@@ -662,7 +662,7 @@ describe('element-templates - cmd', function() {
 
         // removing a task template does
         // not change the applied values
-        expect(task.get('activiti:asyncBefore')).to.be.true;
+        expect(task.get('activiti:async')).to.be.true;
       }));
 
 
@@ -680,7 +680,7 @@ describe('element-templates - cmd', function() {
         // then
         expect(task.get('activiti:modelerTemplate')).to.eql(currentTemplate.id);
 
-        expect(task.get('activiti:asyncBefore')).to.be.true;
+        expect(task.get('activiti:async')).to.be.true;
       }));
 
     });

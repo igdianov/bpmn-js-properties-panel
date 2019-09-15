@@ -12,12 +12,12 @@
     <bpmn2:intermediateCatchEvent id="IntermediateThrowEvent">
       <bpmn2:timerEventDefinition id="_TimerEventDefinition_2" />
     </bpmn2:intermediateCatchEvent>
-    <bpmn2:serviceTask id="WITH_LISTENER" activiti:asyncBefore="true">
+    <bpmn2:serviceTask id="WITH_LISTENER" activiti:async="true">
       <bpmn2:extensionElements>
         <activiti:executionListener class="foo" event="start" />
       </bpmn2:extensionElements>
     </bpmn2:serviceTask>
-    <bpmn2:serviceTask id="WITH_LISTENER_AND_CYCLE" activiti:asyncBefore="true">
+    <bpmn2:serviceTask id="WITH_LISTENER_AND_CYCLE" activiti:async="true">
       <bpmn2:extensionElements>
         <activiti:executionListener class="foo" event="start" />
         <activiti:failedJobRetryTimeCycle>foo</activiti:failedJobRetryTimeCycle>

@@ -15,7 +15,7 @@ var propertiesPanelModule = require('lib'),
     activitiModdlePackage = require('activiti-bpmn-moddle/resources/activiti'),
     getBusinessObject = require('bpmn-js/lib/util/ModelUtil').getBusinessObject;
 
-function getAsyncBefore(container) {
+function getActivitiAsync(container) {
   return domQuery('div[data-entry=async] input[name=async]', container);
 }
 
@@ -60,14 +60,14 @@ describe('flow-node-properties', function() {
   }));
 
 
-  it('should set the asyncBefore property of a gateway flow node', inject(function(propertiesPanel, selection, elementRegistry) {
+  it('should set the async property of a gateway flow node', inject(function(propertiesPanel, selection, elementRegistry) {
 
     // given
     var shape = elementRegistry.get('InclusiveGateway_1');
 
     selection.select(shape);
 
-    var asyncBefore = getAsyncBefore(propertiesPanel._container),
+    var activitiAsync = getActivitiAsync(propertiesPanel._container),
         taskBo = getBusinessObject(shape);
 
     // assume
@@ -76,7 +76,7 @@ describe('flow-node-properties', function() {
 
     // when
     // I click on the checkbox
-    TestHelper.triggerEvent(asyncBefore, 'click');
+    TestHelper.triggerEvent(activitiAsync, 'click');
 
     // then
     // the value is true in the model
@@ -84,14 +84,14 @@ describe('flow-node-properties', function() {
   }));
 
 
-  it('should set the asyncBefore property of a event flow node', inject(function(propertiesPanel, selection, elementRegistry) {
+  it('should set the async property of a event flow node', inject(function(propertiesPanel, selection, elementRegistry) {
 
     // given
     var shape = elementRegistry.get('IntermediateThrowEvent_1');
 
     selection.select(shape);
 
-    var asyncBefore = getAsyncBefore(propertiesPanel._container),
+    var activitiAsync = getActivitiAsync(propertiesPanel._container),
         taskBo = getBusinessObject(shape);
 
     // assume
@@ -100,7 +100,7 @@ describe('flow-node-properties', function() {
 
     // when
     // I click on the checkbox
-    TestHelper.triggerEvent(asyncBefore, 'click');
+    TestHelper.triggerEvent(activitiAsync, 'click');
 
     // then
     // the value is true in the model
@@ -108,14 +108,14 @@ describe('flow-node-properties', function() {
   }));
 
 
-  it('should set the asyncBefore property of a activity flow node', inject(function(propertiesPanel, selection, elementRegistry) {
+  it('should set the async property of a activity flow node', inject(function(propertiesPanel, selection, elementRegistry) {
 
     // given
     var shape = elementRegistry.get('CallActivity_2');
 
     selection.select(shape);
 
-    var asyncBefore = getAsyncBefore(propertiesPanel._container),
+    var activitiAsync = getActivitiAsync(propertiesPanel._container),
         taskBo = getBusinessObject(shape);
 
     // assume
@@ -124,7 +124,7 @@ describe('flow-node-properties', function() {
 
     // when
     // I click on the checkbox
-    TestHelper.triggerEvent(asyncBefore, 'click');
+    TestHelper.triggerEvent(activitiAsync, 'click');
 
     // then
     // the value is true in the model
@@ -230,11 +230,11 @@ describe('flow-node-properties', function() {
 
     selection.select(shape);
 
-    var asyncBeforeCheckbox = getAsyncBefore(propertiesPanel._container),
+    var activitiAsyncCheckbox = getActivitiAsync(propertiesPanel._container),
         exclusiveCheckbox = domQuery('div[data-entry=exclusive] input[name=exclusive]', propertiesPanel._container),
         businessObject = getBusinessObject(shape);
 
-    TestHelper.triggerEvent(asyncBeforeCheckbox, 'click');
+    TestHelper.triggerEvent(activitiAsyncCheckbox, 'click');
 
     // assume
     expect(businessObject.get('exclusive')).to.be.true;
@@ -259,22 +259,22 @@ describe('flow-node-properties', function() {
     selection.select(shape);
 
     var exclusiveInput = getExclusive(propertiesPanel._container),
-        asyncBeforeInput = getAsyncBefore(propertiesPanel._container),
+        activitiAsyncInput = getActivitiAsync(propertiesPanel._container),
         businessObject = getBusinessObject(shape);
 
     // assume
     expect(businessObject.get('exclusive')).to.be.ok;
     expect(exclusiveInput.selected).to.not.be.true;
-    expect(asyncBeforeInput.selected).to.not.be.true;
+    expect(activitiAsyncInput.selected).to.not.be.true;
     expect(businessObject.get('async')).to.not.be.ok;
 
     // when
     // I click on the checkbox
-    TestHelper.triggerEvent(asyncBeforeInput, 'click'); // make the exclusive field visible
+    TestHelper.triggerEvent(activitiAsyncInput, 'click'); // make the exclusive field visible
 
     TestHelper.triggerEvent(exclusiveInput, 'click'); // change value of the exclusive field
 
-    TestHelper.triggerEvent(asyncBeforeInput, 'click'); // reset the exclusive field
+    TestHelper.triggerEvent(activitiAsyncInput, 'click'); // reset the exclusive field
 
     // then
     expect(exclusiveInput.checked).to.equal(businessObject.get('exclusive'));
@@ -291,7 +291,7 @@ describe('flow-node-properties', function() {
 
     selection.select(shape);
 
-    var domElement = getAsyncBefore(propertiesPanel._container);
+    var domElement = getActivitiAsync(propertiesPanel._container);
 
     // when
     TestHelper.triggerEvent(domElement, 'click');
@@ -311,7 +311,7 @@ describe('flow-node-properties', function() {
 
     selection.select(shape);
 
-    var domElement = getAsyncBefore(propertiesPanel._container);
+    var domElement = getActivitiAsync(propertiesPanel._container);
 
     // when
     TestHelper.triggerEvent(domElement, 'click');
@@ -321,7 +321,7 @@ describe('flow-node-properties', function() {
   }));
 
 
-  it('should show activiti:async as asyncBefore in the ui', inject(function(propertiesPanel, selection, elementRegistry) {
+  it('should show activiti:async in the ui', inject(function(propertiesPanel, selection, elementRegistry) {
 
     // given
     var shape = elementRegistry.get('ServiceTask');
@@ -330,24 +330,24 @@ describe('flow-node-properties', function() {
     selection.select(shape);
 
     // then
-    var asyncBeforeField = getAsyncBefore(propertiesPanel._container);
+    var activitiAsyncField = getActivitiAsync(propertiesPanel._container);
 
-    expect(!!asyncBeforeField.checked).to.be.ok;
+    expect(!!activitiAsyncField.checked).to.be.ok;
 
   }));
 
 
-  it('should migrate activiti:async to asyncBefore when asyncBefore is toggled', inject(function(propertiesPanel, selection, elementRegistry) {
+  it('should migrate activiti:async to async when async is toggled', inject(function(propertiesPanel, selection, elementRegistry) {
 
     // given
     var shape = elementRegistry.get('ServiceTask');
 
     selection.select(shape);
 
-    var asyncBeforeField = getAsyncBefore(propertiesPanel._container);
+    var activitiAsyncField = getActivitiAsync(propertiesPanel._container);
 
     // when
-    TestHelper.triggerEvent(asyncBeforeField, 'click');
+    TestHelper.triggerEvent(activitiAsyncField, 'click');
 
     // then
     var bo = getBusinessObject(shape);
@@ -366,7 +366,7 @@ describe('flow-node-properties', function() {
 
     selection.select(shape);
 
-    var domElement = getAsyncBefore(propertiesPanel._container);
+    var domElement = getActivitiAsync(propertiesPanel._container);
 
     expect(domElement.checked).to.be.true;
     expect(extensionElements[0].$type).to.equal('activiti:FailedJobRetryTimeCycle');

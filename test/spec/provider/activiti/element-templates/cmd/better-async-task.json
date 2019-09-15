@@ -10,7 +10,7 @@
       "value": true,
       "binding": {
         "type": "property",
-        "name": "activiti:asyncBefore"
+        "name": "activiti:async"
       }
     }
   ]
