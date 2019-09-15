@@ -19,9 +19,9 @@ function getAsyncBefore(container) {
   return domQuery('div[data-entry=async] input[name=async]', container);
 }
 
-function getAsyncAfter(container) {
-  return domQuery('div[data-entry=asyncAfter] input[name=asyncAfter]', container);
-}
+// function getAsyncAfter(container) {
+//   return domQuery('div[data-entry=asyncAfter] input[name=asyncAfter]', container);
+// }
 
 function getExclusive(container) {
   return domQuery('div[data-entry=exclusive] input[name=exclusive]', container);
